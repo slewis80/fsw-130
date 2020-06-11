@@ -11,7 +11,8 @@ function Main(props) {
                         <input id="movieName" 
                             className="formInput" 
                             type="text" 
-                            name="movie name" 
+                            name="newMovie" 
+                            value={context.newMovie}
                             onChange={context.handleChange}
                             placeholder="Add a movie...">
                         </input>

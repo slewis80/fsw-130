@@ -20,11 +20,8 @@ class MoviesContextProvider extends React.Component {
     handleChange = (e) => {
         e.preventDefault();
 
-        let newMovieInput = document.getElementById("movieName").value;
-        console.log(newMovieInput)
-
         this.setState({
-            newMovie: newMovieInput
+            newMovie: e.target.value
         })
     }
 
@@ -33,14 +30,13 @@ class MoviesContextProvider extends React.Component {
 
         this.setState({
             movies: this.state.movies.concat(this.state.newMovie)
-        })
-        
-        document.getElementById("movieName").value = ""
+        }, () => this.setState({newMovie: ""})
+        )
     }
 
     render() {
         return(
-            <Provider value={{movies: this.state.movies, handleClick: this.handleClick, handleChange: this.handleChange}}>
+            <Provider value={{movies: this.state.movies, newMovie: this.state.newMovie, handleClick: this.handleClick, handleChange: this.handleChange}}>
                 {this.props.children}
             </Provider>
         )
