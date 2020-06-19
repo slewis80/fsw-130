@@ -4,28 +4,29 @@ const {Provider, Consumer} = React.createContext();
 class UglyThingsContextProvider extends React.Component {
     state = {
         posts: [],
-        newPost: {
-            id: 100,
-            title: "",
-            description: "",
-            imgUrl: ""    
-        },
+      
+        
+    }
+     newPost= {
+        id: 100,
         title: "",
         description: "",
-        imgUrl: "",
-        editingPost: {}
+        imgUrl: ""    
     }
-    
-    updatePostValue = (postId, newPostTitle, newPostDescription) => {
-        this.setState({
-            editingPost: this.state.posts.find(post => (
-                post.id === postId ? {id: postId, title: newPostTitle, description: newPostDescription} : {})
-            )}, () => this.setState({
-            posts: this.state.posts.map(post => (
-                post.id === this.state.editingPost.id ? {title: this.state.editingPost.title, description: this.state.editingPost.description} : post)
-            )}
-        ))
-    }
+    cutrrentPost =  this.state.posts.find(post => (
+        post.id === postId ? {id: postId, title: newPostTitle, description: newPostDescription}:{}));
+
+    // updatePostValue = (postId, newPostTitle, newPostDescription) => {
+    //     this.setState(
+    //         [...posts,]
+    //         editingPost: this.state.posts.find(post => (
+    //             post.id === postId ? {id: postId, title: newPostTitle, description: newPostDescription} : {})
+    //         )}, () => this.setState({
+    //         posts: this.state.posts.map(post => (
+    //             post.id === this.state.editingPost.id ? {title: this.state.editingPost.title, description: this.state.editingPost.description} : post)
+    //         )}
+    //     ))
+    // }
 
     // handleChange = (e) => {
     //     const {name, value} = e.target;
