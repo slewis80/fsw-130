@@ -11,7 +11,8 @@ const initialState = {
   minutes: 0,
   seconds: 0,
   milliseconds: 0,
-  laps: []
+  laps: [],
+  interval: ""
 }
 
 
@@ -20,7 +21,7 @@ function reducer(state = initialState, action) {
 
   switch (action.type) {
       case "START_TIMER":
-          if (state.milliseconds === 100) {
+          if (state.milliseconds === 1000) {
               return {
                   ...state,
                   minutes: state.minutes,
@@ -41,7 +42,8 @@ function reducer(state = initialState, action) {
                   ...state,
                   minutes: state.minutes,
                   seconds: state.seconds,
-                  milliseconds: state.milliseconds + 1
+                  milliseconds: state.milliseconds + 1,
+                  // interval: action.int
               }
           }
       case "RESET_TIMER":
@@ -51,12 +53,18 @@ function reducer(state = initialState, action) {
               seconds: state.seconds = 0,
               milliseconds: state.milliseconds = 0
           }
+      case "CHANGING_INTERVAL":
+        console.log(action.int)
+          return {
+            ...state,
+            interval: action.int
+          }
       case "STOP_TIMER":
           return state
       case "LAP":
           return {
               ...state,
-              laps: state.laps.concat(`${state.minutes}:${state.seconds}: ${state.milliseconds}`)
+              laps: state.laps.concat(`${state.minutes}:${state.seconds}:${state.milliseconds}`)
           }
       default: {
           return state
@@ -66,9 +74,9 @@ function reducer(state = initialState, action) {
 
 const store = createStore(reducer);
 
-store.subscribe(() => {
-  console.log(store.getState())
-})
+// store.subscribe(() => {
+//   console.log(store.getState())
+// })
 
 function App(props) {
   return (

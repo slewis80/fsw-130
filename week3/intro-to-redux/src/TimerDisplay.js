@@ -5,7 +5,7 @@ import {connect} from 'react-redux'
 function TimerDisplay(props) {
   return (
     <div className="timerDisplay">
-        <span id="displayScreen" value={props.value}>{props.value}</span>
+        <span id="displayScreen" >{`${props.minutes}:${props.seconds}:${props.milliseconds}`}</span>
     </div>
   );
 }
