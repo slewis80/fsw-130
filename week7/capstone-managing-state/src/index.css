@@ -1,0 +1,177 @@
+body {
+  margin: 0;
+  font-family: 'Ubuntu', sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  background-color: black;
+
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+#titleBar {
+  text-align: center;
+  font-family: 'Montserrat Subrayada', sans-serif;
+  font-size: 30px;
+  background-color: black;
+  color: yellow;
+  margin: 0px;
+  padding: 5px;
+}
+
+#navbar {
+  background-color: blueviolet;
+  text-align: right;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 20px;
+  padding: 15px;
+  margin: 0px;
+}
+
+.navLinks {
+  padding: 15px;
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+  border-radius: 10px;
+}
+
+.navLinks:hover {
+  color: darkgray;
+}
+
+#homePage,
+#nowShowingPage,
+#searchPage {
+  background-color: black;
+  color: yellow;
+  padding: 15px;
+}
+
+#homePage {
+  background-image: url(https://www.freepnglogos.com/uploads/popcorn-png/popcorn-pur-wellness-pur-blog-23.png);
+  background-repeat: repeat-x;
+  background-attachment: fixed;
+  background-position: bottom;
+}
+
+#homePage h1 {
+  margin: 0px;
+}
+
+#mainContent {
+  padding: 0px 20px 200px;
+  font-size: 18px;
+  color: yellow;
+}
+
+#nowShowingPage,
+#addMoviePage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#searchResults {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#searchForm {
+  text-align: right;
+}
+
+#searchForm button {
+  padding: 7px;
+  margin: 5px;
+  font-weight: bold;
+  font-size: 18px;
+  background-color: blueviolet;
+  font-family: 'Permanent Marker', cursive;
+}
+
+#searchForm input {
+  padding: 7px;
+  margin: 5px;
+  width: 30%;
+  font-size: 18px;
+}
+
+#searchForm select {
+  padding: 7px;
+  margin: 5px;
+  font-size: 18px;
+}
+
+#nowShowingTitle {
+  text-align: center;
+  padding: 15px;
+}
+
+.movieContainer {
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  max-width: 40%;
+  border: 5px double blueviolet;
+  border-radius: 10px;
+  margin: 15px;
+}
+
+.movieDetails {
+  word-wrap: break-word;
+  color: whitesmoke;
+  text-align: left;
+  padding: 10px;
+}
+
+.editMovie,
+.addMovie {
+  align-self: flex-start;
+  padding: 5px;
+  margin: 5px;
+  font-weight: bold;
+  background-color: yellow;
+}
+
+.deleteMovie {
+  align-self: flex-start;
+  padding: 5px 7px;
+  margin: 5px;
+  font-weight: bold;
+  background-color: firebrick;
+}
+
+.closeEditor {
+  align-self: flex-start;
+  padding: 5px;
+  margin: 5px;
+  font-weight: bold;
+  background-color: blueviolet;
+}
+
+.titleAndYear {
+  padding: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.genreAndStars {
+  color: yellow;
+  padding: 5px;
+}
+
+.inputEditor {
+  padding: 3px;
+  margin: 5px;
+}
