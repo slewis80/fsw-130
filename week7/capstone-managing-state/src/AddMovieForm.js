@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import AddMovie from './AddMovie'
+import Axios from 'axios'
 
 function AddMovieForm(props) {
 
@@ -32,11 +32,13 @@ function AddMovieForm(props) {
         return capitalizedNames.join(' ');  
     }  
 
-    
+    const handleSubmit = (e) => {
+        props.addMovie(inputs)
+    }
 
 
     return (
-        <form name="addMovieForm" className="movieContainer" onSubmit={props.submit}>
+        <form name="addMovieForm" className="movieContainer" onSubmit={handleSubmit}>
             <div className="movieImg">
                 <textarea name="img" style={{"width": "140px", "height": "209px"}} 
                     type="text" value={inputs.img} 
@@ -91,7 +93,7 @@ function AddMovieForm(props) {
 
             </div>
 
-            <button className="addMovie" onClick={AddMovie}>Add Movie</button>
+            <button className="addMovie" onClick={handleSubmit}>Add Movie</button>
 
         </form>
     )

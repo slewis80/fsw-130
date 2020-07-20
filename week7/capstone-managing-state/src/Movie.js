@@ -1,5 +1,4 @@
 import React, {useState} from 'react'
-import AddMovieForm from './AddMovieForm'
 
 function Movie(props) {
 
@@ -52,7 +51,7 @@ function Movie(props) {
                 <span className="titleAndYear">{props.title}</span>
                 <span className="titleAndYear">({props.releaseYear})</span><br/>
                 <span className="genreAndStars">Genre: </span><span> {props.genre}</span><br/>
-                <span className="genreAndStars">Stars: </span><span> {props.mainStars[0]}, {props.mainStars[1]}, {props.mainStars[2]}, {props.mainStars[3]}</span>
+                <span className="genreAndStars">Stars: </span><span> {props.mainStars}</span>
             </div>
             <button className="editMovie" onClick={() => setToggleForm(!toggleForm)}>Edit</button>
             <button className="deleteMovie" onClick={handleDelete}>X</button>
